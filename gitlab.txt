@@ -1,0 +1,16 @@
+docker run \
+-it \
+--name=gitlab \
+--detach \
+--link=jenkins \
+--network=isolated_nw \
+--hostname=gitlab \
+--publish 10443:443 \
+--publish 10080:80 \
+--publish 10022:22 \
+--volume /home/gitlab/config:/etc/gitlab:Z \
+--volume /home/gitlab/logs:/var/log/gitlab:Z \
+--volume /home/gitlab/data:/var/opt/gitlab:Z \
+gitlab/gitlab-ce:latest
+
+docker network connect bridge gitlab

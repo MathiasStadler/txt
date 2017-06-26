@@ -1,0 +1,5 @@
+sh +x ./gitlab.txt && \
+sh +x ./nexus.txt && \
+sh +x ./jenkins.txt && \
+sh +x ./jenkins_slave.txt
+

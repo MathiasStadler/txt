@@ -1,0 +1,10 @@
+http://ma.ttwagner.com/lazy-distro-mirrors-with-squid/
+
+cache_peer mirror.us.as6453.net parent 80 0 no-query originserver name=as6453
+cache_peer_domain as6453 fedora-mirror.lowell.lan debian-mirror.lowell.lan
+
+
+https://forum.ubuntuusers.de/topic/squid-reserveproxy-mit-dynamischen-cache-peers/
+
+use always the same cache_peer
+

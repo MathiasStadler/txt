@@ -1,0 +1,36 @@
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+
+#stop exited and delete only non-tagged images
+docker ps --filter 'status=Exited' -a | xargs docker stop docker images --filter "dangling=true" -q | xargs docker rmi 
+
+#network
+https://docs.docker.com/engine/userguide/networking/work-with-networks/
+
+
+#https://labs.ctl.io/optimizing-docker-images/?hvid=1OW0br
+docker export 7423d238b | docker import - sample:flat
+
+
+#docker jenkins tutorial
+https://engineering.riotgames.com/news/jenkins-ephemeral-docker-tutorial
+
+
+#Execute Jenkins Maven builds in Docker containers
+http://christoph-burmeister.eu/?p=2989
+http://engineering.riotgames.com/news/jenkins-ephemeral-docker-tutorial
+
+
+#docker tag 
+docker tag 34858e3e054e myname/sshd:latest
+
+docker rmi $(docker images -a|grep "^<none>"|awk '{print $3}')
+
+docker ps --no-trunc -aqf "status=exited" | xargs docker rm ;
+ 
+docker images --no-trunc -aqf "dangling=true" | xargs docker rmi ;
+ 
+docker volume ls -qf "dangling=true" | xargs docker volume rm'
+
+http://stackoverflow.com/questions/32723111/how-to-remove-old-and-unused-docker-images

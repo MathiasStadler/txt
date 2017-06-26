@@ -1,0 +1,18 @@
+grep -aoP "http.*" /tmp/t
+
+grep -aoP "http.*(?=/)" /tmp/t
+
+#http://unix.stackexchange.com/questions/181254/how-to-use-grep-and-cut-in-script-to-obtain-website-urls-from-an-html-file
+
+wget -qO- google.com |
+tr \" \\n | grep https\*://
+
+grep -hraoP "(ftp|http|https)://[a-zA-Z0-9./?=_-]*"  >/tmp/t
+
+#http://crypticjags.com/golang/can-golang-beat-perl-on-regex-performance.html
+
+#https://swtch.com/~rsc/regexp/regexp1.html
+
+#https://swtch.com/~rsc/regexp/regexp4.html
+
+http://www.guguncube.com/1540/python-check-list-of-urls

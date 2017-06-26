@@ -1,0 +1,4 @@
+#docker run -it --rm -v /var/log/squid3:/log docker-sarg -f /dev/null -l access.log
+
+docker run -it --rm -v /var/log/squid3:/log docker-sarg -f /dev/null -l access.log
+

@@ -1,0 +1,4 @@
+https://www.brianchristner.io/how-to-setup-docker-monitoring/
+
+querys
+https://github.com/Kentik/docker-monitor

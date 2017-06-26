@@ -1,0 +1,11 @@
+docker run \
+    --hostname=jenkins \
+    --link=gitlab \
+    --network=isolated_nw \
+    --detach \
+    --publish 10180:8080 --publish 50000:50000  \
+    --name jenkins \
+    --restart always \
+    --volume /home/jenkins:/var/jenkins_home jenkins-jdk8
+
+docker network connect bridge jenkins

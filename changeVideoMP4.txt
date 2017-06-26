@@ -1,0 +1,4 @@
+#https://www.youtube.com/watch?v=cJAE5euEwz8
+
+
+ffmpeg -i Untitled_Screencast.mp4 -r 30 -ac 2 -vcodec libx264 -preset veryfast -pix_fmt yuv420p -acodec libmp3lame -ar 44100 -ab 64k -threads 4 -y Desktop.mp4

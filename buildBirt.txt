@@ -1,0 +1,15 @@
+#4.7.0-SNAPSHOT
+
+rm -rf birt-4.7.0-SNAPSHOT
+
+git clone https://github.com/eclipse/birt.git birt-4.7.0-SNAPSHOT
+
+cd birt-4.7.0-SNAPSHOT
+
+#from here
+#http://stackoverflow.com/questions/6178498/using-grep-and-sed-to-find-and-replace-a-string#4
+grep -rl "0.0.1-SNAPSHOT"  . | xargs sed -i 's/0.0.1-SNAPSHOT/4.7.0-SNAPSHOT/g'
+
+
+#mvn package -Pneon -DskipTests
+#mvn package -Pneon

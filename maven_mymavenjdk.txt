@@ -1,0 +1,7 @@
+docker run --rm -it \
+--link=nexus \
+--name my-maven-project \
+-v "$PWD":/usr/src/mymaven \
+-v "$HOME/.m2":/root/.m2 \
+-w /usr/src/mymaven \
+mymaven-jk8-alpine  mvn package -DskipTests -Dmaster_flatten_skip=true -e -X 

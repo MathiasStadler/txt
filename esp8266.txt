@@ -1,0 +1,4 @@
+#arduino esp01
+http://www.hackerspace-ffm.de/wiki/index.php?title=ESP8266_mit_Arduino_programmieren
+
+https://github.com/esp8266/Arduino/blob/master/doc/boards.md#espino

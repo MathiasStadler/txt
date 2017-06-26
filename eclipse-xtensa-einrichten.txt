@@ -1,0 +1,5 @@
+https://devzone.nordicsemi.com/tutorials/7/development-with-gcc-and-eclipse/
+
+http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Freference%2Fcdt_u_pref_build_scanner_discovery.htm
+
+http://gnuarmeclipse.github.io/plugins/install/

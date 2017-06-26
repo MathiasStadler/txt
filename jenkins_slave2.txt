@@ -1,0 +1,10 @@
+docker run \
+    --hostname=jenkins-slave2 \
+    --link=gitlab \
+    --link=jenkins \
+    --network=isolated_nw \
+    --detach \
+    --name jenkins-slave2 \
+    --volume /home/jenkins:/var/jenkins_home  jenkins-slave2:latest
+
+docker network connect bridge  jenkins-slave2

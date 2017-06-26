@@ -1,0 +1,1 @@
+http://de.slideshare.net/giorrrgio/import-golang-struct-microservice

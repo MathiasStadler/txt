@@ -1,0 +1,10 @@
+docker run \
+-itd \
+    --hostname=jenkins-slave \
+    --link=gitlab \
+    --link=jenkins \
+    --network=isolated_nw \
+    --name jenkins-slave \
+    --volume /home/jenkins:/var/jenkins_home  jenkins-slave-jdk8 
+
+#docker network connect bridge jenkins-slave

@@ -1,0 +1,8 @@
+docker run --rm -it \
+--link=nexus \
+--name my-maven-project \
+-v "$PWD":/usr/src/mymaven \
+-v "$HOME":/root \
+-v "$HOME/.m2":/root/.m2 \
+-w /usr/src/mymaven \
+maven:3.3.3-jdk-8 sh +x /root/buildBirt.txt 

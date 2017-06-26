@@ -1,0 +1,5 @@
+https://angular-2-training-book.rangle.io/handout/features/delegation.html
+
+https://github.com/getify/You-Dont-Know-JS
+
+https://angular-2-training-book.rangle.io/handout/advanced-components/component_lifecycle.html

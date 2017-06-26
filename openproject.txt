@@ -1,0 +1,6 @@
+docker run -d -p 18080:80 -p 25 -p 587 --name openproject -e SECRET_KEY_BASE=secret \
+  -v /var/lib/openproject/pgdata:/var/lib/postgresql/9.4/main \
+  -v /var/lib/openproject/logs:/var/log/supervisor \
+  -v /var/lib/openproject/static:/var/db/openproject \
+  openproject/community:6.0
+
