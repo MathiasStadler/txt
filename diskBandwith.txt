@@ -1,0 +1,6 @@
+iostat -dx /dev/sda 5
+
+iotop
+atop
+
+nmon 
