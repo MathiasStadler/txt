@@ -1,0 +1,17 @@
+# disable  ubuntu
+- from here
+- https://unix.stackexchange.com/questions/257274/how-to-disable-dnsmasq
+
+- ```sudo sed -i 's/^dns=dnsmasq/#&/' /etc/NetworkManager/NetworkManager.conf```
+
+# enable
+- ```sudo sed -i 's/^#dns=dnsmasq/dns=dnsmasq/' /etc/NetworkManager/NetworkManager.conf```
+
+
+- restart network-manager and networking
+
+```sudo service network-manager restart && sudo service networking restart ```
+
+- killall dnsmasq
+
+- ``` sudo killall dnsmasq```
