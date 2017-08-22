@@ -13,5 +13,7 @@ gvm use go1.4&& \
 export GOROOT_BOOTSTRAP=$GOROOT&& \
 gvm install go1.7&& \
 gvm use go1.7&& \
-go version 
+go version && \ 
 #should version 1.7
+#reboot save / default used
+gvm use go1.7 --default
