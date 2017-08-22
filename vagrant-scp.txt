@@ -1,0 +1,7 @@
+#use scp with any unix vagrant box
+
+#Install plugin
+vagrant plugin install vagrant-scp
+
+#scp a file into the box ( e.g. ubuntu )
+vagrant scp ~/Projects/ofGitHub/txt/gvm-install.txt /tmp
