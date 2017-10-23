@@ -1,0 +1,8 @@
+#settings local PulseAudio
+#set paparefs
+
+https://askubuntu.com/questions/28039/how-to-stream-music-over-the-network-to-multiple-computers
+
+#export client
+
+https://blogs.gnome.org/ignatenko/2015/07/31/how-to-set-up-network-audio-server-based-on-pulseaudio-and-auto-discovered-via-avahi/
