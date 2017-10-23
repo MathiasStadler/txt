@@ -1,0 +1,11 @@
+sudo apt install kde-install
+
+#fix
+
+# https://askubuntu.com/questions/621284/unmet-dependencies-when-trying-to-install-kde-plasma-5-3-on-ubuntu-15-04
+
+ kde-config-telepathy-accounts 
+
+#fix
+sudo dpkg -P unity-scope-gdrive account-plugin-google account-plugin-facebook
+sudo apt-get install -f
