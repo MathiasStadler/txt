@@ -1,0 +1,10 @@
+#from here
+#https://askubuntu.com/questions/93566/how-to-log-all-bash-commands-by-all-users-on-a-server
+
+#insert to bashrc
+
+export HISTTIMEFORMAT="%Y-%m-%d %T "
+export PROMPT_COMMAND='trap "" 1 2 15; history -a >(tee -a ~/.bash_history | while read line; do if [[ $line =~ ^#[0-9]*$ ]]; then continue; fi; logger -p user.info -t "bash[$$]" "($USER) $line"; done); trap 1 2 15;'
+
+# output /var/log/syslog
+
