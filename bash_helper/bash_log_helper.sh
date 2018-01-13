@@ -4,11 +4,17 @@
 # https://stackoverflow.com/questions/8455991/elegant-way-for-verbose-mode-in-scripts
 # set verbose level to info
 
-__VERBOSE=7
+# set default log_level
+readonly __VERBOSE=6
 
+# loglevels
 declare -A LOG_LEVELS
 # https://en.wikipedia.org/wiki/Syslog#Severity_level
 LOG_LEVELS=([0]="emerg" [1]="alert" [2]="crit" [3]="err" [4]="warning" [5]="notice" [6]="info" [7]="debug")
+
+
+# function .log
+# return nothing
 function .log () {
   local LEVEL=${1}
   shift
@@ -27,7 +33,12 @@ display_alert_log()
 #--------------------------------------------------------------------------------------------------------------------------------
 {
 
-if [ $3 ]       # This time, $string1 stands naked.
+
+# set default _log_level for messages
+let _log_level=7
+
+# check is 2nd  message set 
+if [ "$3" ]       
 then
   .log 7 "3rd function argument  => \"$3\" is not null."
   _log_level=$3
@@ -82,7 +93,7 @@ fi
 .log 6 "Start logging"
 
 
-show_looging(){
+function show_looging(){
 
 
 .log 1 "0"
@@ -115,3 +126,24 @@ display_alert_log "7" "debug with text" "debug"
 #LOG_LEVELS=([0]="emerg" [1]="alert" [2]="crit" [3]="err" [4]="warning" [5]="notice" [6]="info" [7]="debug")
 
 }
+
+
+
+# avoid overwrite the SCRIPT_NAME value at export to other script
+readonly SCRIPT_NAME="bash_log_helper.sh"
+
+function  usage_bash_log_helper(){
+echo -e "Script  $(basename $0) call directly"
+echo -e "Helper script should run normaly as bash include"
+echo -e "BASH_PATH_HELPER=$(basename $0); test -f \$BASH_PATH_HELPER && source \$BASH_PATH_HELPER"
+}
+
+if [[ $(basename $0) == "${SCRIPT_NAME}" ]]; then
+	usage_bash_log_helper
+	show_looging
+	exit 0
+fi
+
+# from here
+# https://unix.stackexchange.com/questions/104755/how-can-i-create-a-local-function-in-my-bashrc
+unset -f usage_bash_log_helper
