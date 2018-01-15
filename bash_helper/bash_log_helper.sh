@@ -133,12 +133,12 @@ display_alert_log "7" "debug with text" "debug"
 readonly SCRIPT_NAME="bash_log_helper.sh"
 
 function  usage_bash_log_helper(){
-echo -e "Script  $(basename $0) call directly"
+echo -e "Script  $(basename "$0") call directly"
 echo -e "Helper script should run normaly as bash include"
-echo -e "BASH_PATH_HELPER=$(basename $0); test -f \$BASH_PATH_HELPER && source \$BASH_PATH_HELPER"
+echo -e "BASH_PATH_HELPER=$(basename "$0"); test -f \$BASH_PATH_HELPER && source \$BASH_PATH_HELPER"
 }
 
-if [[ $(basename $0) == "${SCRIPT_NAME}" ]]; then
+if [[ $(basename "$0") == "${SCRIPT_NAME}" ]]; then
 	usage_bash_log_helper
 	show_looging
 	exit 0
