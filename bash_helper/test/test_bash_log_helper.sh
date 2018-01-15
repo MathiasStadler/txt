@@ -5,7 +5,25 @@
 #TODO Whats is the best test for bash scripts
 
 
-BASH_PATH_HELPER=../bash_log_helper.sh; test -f $BASH_PATH_HELPER && source $BASH_PATH_HELPER
+echo "Localpath => $(pwd)"
+
+# script path
+# from here
+# https://stackoverflow.com/questions/4774054/reliable-way-for-a-bash-script-to-get-the-full-path-to-itself
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo -e "Script Path => ${SCRIPT_PATH}"
+
+# find and source bash_path_helper.sh and add inside your script
+BASH_PATH_HELPER=bash_path_helper.sh
+if [ -r "../bash_helper/bash_path_helper.sh" ]; then
+  source ../bash_helper/bash_path_helper.sh
+else
+  echo "fatal: could not find ../bash_helper/bash_path_helper.sh"
+  exit 1
+fi
+
+
 
 display_alert_log "0" "emerg"
 display_alert_log "1" "alert"
