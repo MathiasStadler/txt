@@ -7,7 +7,7 @@
 # TODO check checksum
 # TODO check add package for ssh
 
-# NOT SAFE only for quick test
+# NOT SAFE only for abad hack
 
 sudo apt install -y build-essential libssl-dev zlib1g-dev
 wget "http://mirrors.evowise.com/pub/OpenBSD/OpenSSH/portable/openssh-7.4p1.tar.gz"
